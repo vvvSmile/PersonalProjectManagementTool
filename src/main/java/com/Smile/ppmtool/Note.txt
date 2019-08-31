@@ -1,9 +1,21 @@
 测试工具使用Postman
 
+POST http://localhost:8080/api/project
+{
+	"projectName":"Test",
+	"projectIdentifier":"Id13",
+	"description":"a new project description"
+}
+--------------
+GET by ID
+http://localhost:8080/api/project/Id13
+--------------
+
 http://localhost:8080/h2-console
 
 https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/validation/BindingResult.html
 
+--------------
 快捷键：
 Alt + Enter   引入类
 Alt + Insert    set/get; 构造方法;  toString; 重写方法。。。

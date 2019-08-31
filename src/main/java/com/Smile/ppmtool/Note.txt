@@ -10,6 +10,9 @@ POST http://localhost:8080/api/project
 GET by ID
 http://localhost:8080/api/project/Id13
 --------------
+GET ALL projects
+http://localhost:8080/api/project/all
+--------------
 
 http://localhost:8080/h2-console
 

@@ -1,6 +1,7 @@
 package com.Smile.ppmtool.web;
 
 import com.Smile.ppmtool.domain.Project;
+import com.Smile.ppmtool.services.MapValidationErrorService;
 import com.Smile.ppmtool.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,26 +25,17 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    @Autowired
+    private MapValidationErrorService mapValidationErrorService;
+
     @PostMapping("")
     public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result){
         //加了@Valid注解之后，validation不在出现500（HTTP-Internal Server Error）的错误，而出现400（bad request），much better
         //BindingResult是一个用来得到错误信息接口，
 
-        if(result.hasErrors()){
-            //将Project 换成? 才能返回字符串
-            //return new ResponseEntity<String>("Invalid project object",HttpStatus.BAD_REQUEST);
-
-            //返回FieldErrors List
-            //return new ResponseEntity<List<FieldError>>(result.getFieldErrors(),HttpStatus.BAD_REQUEST);
-
-            //获取具体的error field with message details eg. {"field":"error message","field":"error message"}
-            Map<String,String> errorMap = new HashMap<>();
-            for(FieldError error: result.getFieldErrors()){
-                errorMap.put(error.getField(),error.getDefaultMessage());
-            }
-            return new ResponseEntity<Map<String,String>>(errorMap,HttpStatus.BAD_REQUEST);
-
-        }
+        //将error validation 重构成service
+        ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationErrorService(result);
+        if(errorMap != null) return errorMap;
 
         Project newProject=projectService.saveOrUpdateProject(project);
         return new ResponseEntity<Project>(project, HttpStatus.CREATED);

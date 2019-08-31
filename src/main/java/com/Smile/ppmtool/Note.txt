@@ -1,4 +1,8 @@
-测试工具使用Postman
+######################################################
+**** 本项目基于SpringBoot 2.0 + ReactJs + Redux ****
+######################################################
+
+工具 IDEA + Postman, Node.js + VS code
 
 POST http://localhost:8080/api/project
 {
@@ -13,10 +17,25 @@ http://localhost:8080/api/project/Id13
 GET ALL projects
 http://localhost:8080/api/project/all
 --------------
-
+Updating an exists project. JPA 将会自动将数据进行update，如果插入的id相同
+--------------
 http://localhost:8080/h2-console
-
+--------------
 https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/validation/BindingResult.html
+--------------
+What is ReactJs?
+Created by FaceBook,widely used:
+https://github.com/facebook/react/wiki/Sites-Using-React
+--》moved to https://reactjs.org/
+Create prototypes,faster
+Communicate better with front-end develops
+Show case your API's to business representatives
+--------------
+What is Redux
+Inspired by Fackbook's Flux architecture
+Stores application state - supports stateless APIs
+Perfect for when you have reasonable amounts of data changing over time
+--------------
 
 --------------
 快捷键：
@@ -25,3 +44,36 @@ Alt + Insert    set/get; 构造方法;  toString; 重写方法。。。
 Ctrl + Alt + b 查看接口实现类中方法（就是我们使用接口编程时，在调用实现类方法处直接Ctrl+鼠标左键方法，只能进入到接口中定义的方法处，但是使用该快捷键则直接到实现类的该方法中了）
 Ctrl+Alt+T 将代码包在一个块中，例如try/catch  ;synchronized等
 CTRL+ALT+I 自动缩进
+
+
+-----set up dev env for react development
+Node.js + VS Code
+Enabled extensions in VS code:
+***  Babel ES6/ES7
+***  Bracket Pair Colorizer
+***  VS Code ES7 React/Redux/React-Native/JS snippets
+***  VS Code JavaScript (ES6) snippets
+***  Live Server
+***  Node.js Modules Intellisense
+***  Path Intellisense
+***  Python extension for Visual Studio Code
+
+VS code user setting:
+{
+  "editor.wordWrap": "on",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "javascript": "html"
+  },
+  "editor.formatOnSave": true,
+  "git.enableSmartCommit": true,
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}

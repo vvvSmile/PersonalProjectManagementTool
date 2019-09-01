@@ -85,3 +85,16 @@ $ npm install -g create-react-app
 $ create-react-app ppmtool-react-client
 注意： ppmtool-react-client 文件夹应该可以放在上一层目录用VS code打开，而不是嵌套在springboot项目中
 ----------
+rcc：Create a react component class with ES7 module system
+import React, { Component } from 'react'
+
+export default class Dashboard extends Component {
+    render() {
+        return (
+            <div>
+
+            </div>
+        )
+    }
+}
+-----------------

@@ -77,3 +77,11 @@ VS code user setting:
   "git.enableSmartCommit": true,
   "javascript.updateImportsOnFileMove.enabled": "always"
 }
+
+----
+安装react app
+$ npm install -g create-react-app
+创建一个react application
+$ create-react-app ppmtool-react-client
+注意： ppmtool-react-client 文件夹应该可以放在上一层目录用VS code打开，而不是嵌套在springboot项目中
+----------

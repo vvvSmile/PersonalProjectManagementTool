@@ -98,3 +98,7 @@ export default class Dashboard extends Component {
     }
 }
 -----------------
+Bring bootstrap into the project:
+npm install bootstrap
+--启动项目
+nmp start

@@ -110,4 +110,9 @@ npm install react-router-dom
 npm install react-router-dom@5.0.1
 用rfc创建CreateProjectButton
 -----------------
+安装redux
+npm i redux react-redux redux-thunk
+安装 axios
+npm i axios
+-----------------
 
